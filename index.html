@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>กำลังเข้าสู่ระบบ</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #002855, #004aad);
+            font-family: 'Sarabun', sans-serif;
+            color: #fff;
+        }
+
+        .loading-box {
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* โลโก้ */
+        .logo {
+            width: 90px;
+            margin-bottom: 20px;
+            animation: softSpin 3s linear infinite;
+            filter: drop-shadow(0 6px 15px rgba(0,0,0,0.3));
+        }
+
+        .loading-box h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .loading-box p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        @keyframes softSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loading-box">
+        <img src="images/logo.png" alt="โลโก้วิทยาลัย" class="logo">
+
+        <h1>กำลังเข้าสู่ระบบ</h1>
+        <p>วิทยาลัยเทคโนโลยี ไทย-ไต้หวัน (BDI)</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "main.html";
+        }, 2500);
+    </script>
+
+</body>
+</html>

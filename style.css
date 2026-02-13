@@ -1,0 +1,511 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: #222;
+    background-color: #f4f6f9;
+}
+
+/* ===== หน้า Welcome ===== */
+.home {
+    background: linear-gradient(
+        rgba(0,40,85,0.8),
+        rgba(0,40,85,0.8)
+    ),
+    url('images/entrance.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background: rgba(255,255,255,0.97);
+    color: #002855;
+    text-align: center;
+    padding: 55px 45px;
+    border-radius: 16px;
+    max-width: 520px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    animation: fadeUp 0.8s ease;
+}
+
+.overlay h1 {
+    margin-bottom: 12px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.overlay p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.start-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #002855, #004aad);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,40,85,0.35);
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,40,85,0.45);
+}
+
+/* ===== หน้า Main Menu ===== */
+.main-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background: #ffffff;
+    padding: 55px 45px;
+    border-radius: 18px;
+    width: 360px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    animation: fadeUp 0.6s ease;
+}
+
+.main-container h1 {
+    color: #002855;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.menu-btn {
+    display: block;
+    margin: 15px 0;
+    padding: 14px;
+    background: linear-gradient(135deg, #002855, #003f88);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #001f44, #002f66);
+}
+
+/* ===== Header หน้า 360 ===== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background: rgba(0,40,85,0.88);
+    color: #fff;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.logo-area img {
+    height: 34px;
+}
+
+.title-area h2 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.title-area p {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* ===== ปุ่มกลับหน้าเมนู ===== */
+.back-btn {
+    position: fixed;
+    top: 72px;
+    right: 20px;
+    background: rgba(0,40,85,0.95);
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-1px);
+    background: #001f44;
+}
+
+/* ===== เมนูเลือกสถานที่ ===== */
+.menu {
+    position: fixed;
+    top: 72px;
+    left: 20px;
+    background: rgba(255,255,255,0.97);
+    padding: 18px;
+    border-radius: 14px;
+    color: #002855;
+    z-index: 999;
+    width: 210px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== พื้นที่ภาพ 360 ===== */
+#panorama {
+    width: 100%;
+    height: 100vh;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== พื้นหลังไม่ให้โล่ง ===== */
+.main-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(0,74,173,0.08), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(0,40,85,0.08), transparent 45%);
+    z-index: 0;
+}
+
+.main-page {
+    position: relative;
+}
+
+/* ===== กล่องหลักมีลูกเล่น ===== */
+.main-container {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(0,40,85,0.08);
+}
+
+.main-container::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        rgba(0,74,173,0.15),
+        rgba(0,40,85,0.05)
+    );
+    z-index: -1;
+}
+
+/* ===== เส้นตกแต่งใต้หัวข้อ ===== */
+.main-container h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #002855, #004aad);
+}
+
+/* ===== ปุ่มมีลูกเล่น ===== */
+.menu-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-btn::after {
+    content: "→";
+    position: absolute;
+    right: 18px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.menu-btn:hover::after {
+    opacity: 1;
+    right: 14px;
+}
+
+.menu-btn:hover {
+    padding-right: 34px;
+}
+
+/* ===== Welcome ไม่โล่ง ===== */
+.overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,74,173,0.08),
+            transparent 60%
+        );
+    pointer-events: none;
+}
+
+/* ===== Header มีเส้นไฮไลต์ ===== */
+.site-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #004aad, #00c6ff);
+    opacity: 0.6;
+}
+
+/* ===== ปุ่มกลับดูพรีเมียมขึ้น ===== */
+.back-btn {
+    backdrop-filter: blur(4px);
+}
+
+.back-btn::before {
+    content: "←";
+    margin-right: 6px;
+}
+
+/* ===== เมนูข้างไม่โล่ง ===== */
+.menu::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 6px 6px 0 0;
+    background: linear-gradient(90deg, #002855, #004aad);
+}
+
+body, html {
+    font-family: 'Sarabun', sans-serif;
+}
+
+/* ===== กล่อง Welcome ===== */
+.welcome-box {
+    text-align: center;
+}
+
+/* ป้ายเล็กด้านบน */
+.welcome-badge {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin-bottom: 20px;
+}
+
+/* หัวข้อหลัก */
+.welcome-box h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+/* เส้นคั่น */
+.divider {
+    margin: 22px auto;
+}
+
+/* ข้อความเครดิต */
+.credit {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    color: #334155;
+}
+
+/* ปุ่ม */
+.start-btn {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+}
+
+/* เมนูขวาบน */
+.top-menu {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.top-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.top-link:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-1px);
+}
+
+body {
+    margin: 0;
+    font-family: 'Sarabun', sans-serif;
+    background: linear-gradient(135deg, #eef3f9, #dbe7f5);
+    color: #1f2d3d;
+}
+
+/* ===== Header ===== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 12px 28px;
+
+    background: rgba(0, 40, 85, 0.35); /* โปร่งใส */
+    backdrop-filter: blur(10px);      /* glass effect */
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #fff;
+    z-index: 1000;
+}
+
+
+.logo-area img {
+    height: 46px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+.title-area h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.title-area p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 2px;
+}
+
+/* ===== Main ===== */
+.main-page {
+    padding-top: 90px;
+}
+
+
+.main-container {
+    background: #ffffff;
+    max-width: 650px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.main-container h1 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #1e3c72;
+}
+
+/* ===== Contact Box ===== */
+.contact-box {
+    background: #f5f8fd;
+    border-left: 5px solid #2a5298;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.contact-box p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.contact-box strong {
+    color: #1e3c72;
+    font-size: 16px;
+}
+
+/* ===== Button ===== */
+.menu-btn {
+    display: block;
+    margin: 35px auto 0;
+    width: fit-content;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(42,82,152,0.4);
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.social-icons a img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover สมูท */
+.social-icons a:hover img {
+    transform: scale(1.15);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}

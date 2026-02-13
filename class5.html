@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<title>ทัวร์วิทยาลัย 360°</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+</head>
+<body>
+    <div id="transition" class="scene-transition"></div>
+
+<header class="site-header">
+    <div class="logo-area">
+        <img src="images/logo.png" alt="โลโก้วิทยาลัย">
+    </div>
+    <div class="title-area">
+        <h2>วิทยาลัยเทคโนโลยี ไทย-ไต้หวัน (BDI)</h2>
+        <p>THAI-TAIWAN (BDI) TECHNOLOGICAL COLLEGE </p>
+        <p>泰國-台灣 (BDI) 科技學院</p>
+    </div>
+</div>
+
+</header>
+<a href="main.html" class="back-btn">กลับหน้าเมนูหลัก</a>
+
+</div>
+
+<div id="panorama"></div>
+
+<script>
+    pannellum.viewer('panorama', {
+        "default": {
+            "firstScene": "entrance",
+            "autoLoad": true
+        },
+    
+        "hotSpotDebug": true,
+    
+        "scenes": {
+    
+            "entrance": {
+                "title": "หน้าทางเข้า",
+                "type": "equirectangular",
+                "panorama": "images/class51.jpg",
+                "yaw": 210,
+                "hotSpots": [
+                    {
+                        "pitch": -25,
+                        "yaw": 210,
+                        "type": "scene",
+                        "text": "เดินไปข้างหน้า",
+                        "sceneId": "way1"
+                    }
+                ]
+            },
+    
+            "way1": {
+                "title": "ทางเดิน 1",
+                "type": "equirectangular",
+                "panorama": "images/class52.jpg",
+                "yaw": 260,
+                "hotSpots": [
+                    {
+                        "pitch": -0,
+                        "yaw": 260,
+                        "type": "scene",
+                        "text": "เดินต่อ",
+                        "sceneId": "way2"
+                    },
+                    {
+                        "pitch": -5,
+                        "yaw": 90,
+                        "type": "scene",
+                        "text": "ย้อนกลับ",
+                        "sceneId": "entrance"
+                    }
+                ]
+            },
+    
+            "way2": {
+                "title": "ทางเดิน 2",
+                "type": "equirectangular",
+                "panorama": "images/class53.jpg",
+                "yaw": 260,
+                "hotSpots": [
+                    {
+                        "pitch": 0,
+                        "yaw": 260,
+                        "type": "scene",
+                        "text": "ชั้น 5",
+                        "sceneId": "way3"
+                    },
+                    {
+                        "pitch": -5,
+                        "yaw": 90,
+                        "type": "scene",
+                        "text": "ย้อนกลับ",
+                        "sceneId": "way1"
+                    }
+                ]
+            },
+        }
+    });
+    </script>
+    
+    
+
+
+
+</script>
+
+</body>
+</html>

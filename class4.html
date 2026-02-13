@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<title>ทัวร์วิทยาลัย 360°</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+</head>
+<body>
+    <div id="transition" class="scene-transition"></div>
+
+<header class="site-header">
+    <div class="logo-area">
+        <img src="images/logo.png" alt="โลโก้วิทยาลัย">
+    </div>
+    <div class="title-area">
+        <h2>วิทยาลัยเทคโนโลยี ไทย-ไต้หวัน (BDI)</h2>
+        <p>THAI-TAIWAN (BDI) TECHNOLOGICAL COLLEGE </p>
+        <p>泰國-台灣 (BDI) 科技學院</p>
+    </div>
+</div>
+
+</header>
+<a href="main.html" class="back-btn">กลับหน้าเมนูหลัก</a>
+
+</div>
+
+<div id="panorama"></div>
+
+<script>
+    pannellum.viewer('panorama', {
+        "default": {
+            "firstScene": "entrance",
+            "autoLoad": true
+        },
+    
+        "hotSpotDebug": true,
+    
+        "scenes": {
+    
+            "entrance": {
+                "title": "หน้าทางเข้า",
+                "type": "equirectangular",
+                "panorama": "images/class41.jpg",
+                "yaw": 195,
+                "hotSpots": [
+                    {
+                        "pitch": 0,
+                        "yaw": 195,
+                        "type": "scene",
+                        "text": "เดินไปข้างหน้า",
+                        "sceneId": "way1"
+                    }
+                ]
+            },
+    
+            "way1": {
+                "title": "ทางเดิน 1",
+                "type": "equirectangular",
+                "panorama": "images/class42.jpg",
+                "yaw": 245,
+                "hotSpots": [
+                    {
+                        "pitch": 0,
+                        "yaw": 245,
+                        "type": "scene",
+                        "text": "เดินต่อ",
+                        "sceneId": "way2"
+                    },
+                    {
+                        "pitch": -5,
+                        "yaw": 45,
+                        "type": "scene",
+                        "text": "ย้อนกลับ",
+                        "sceneId": "entrance"
+                    }
+                ]
+            },
+    
+            "way2": {
+                "title": "ทางเดิน 2",
+                "type": "equirectangular",
+                "panorama": "images/class43.jpg",
+                "yaw": 165,
+                "hotSpots": [
+                    {
+                        "pitch": 0,
+                        "yaw": 165,
+                        "type": "scene",
+                        "text": "เดินต่อ",
+                        "sceneId": "way3"
+                    },
+                    {
+                        "pitch": -5,
+                        "yaw": -10,
+                        "type": "scene",
+                        "text": "ย้อนกลับ",
+                        "sceneId": "way1"
+                    }
+                ]
+            },
+    
+            "way3": {
+                "title": "ทางเดิน 3",
+                "type": "equirectangular",
+                "panorama": "images/class44.jpg",
+                "yaw": 220,
+                "hotSpots": [
+                    {
+                        "pitch": 0,
+                        "yaw": 220,
+                        "type": "scene",
+                        "text": "สิ้นสุด",
+                        "sceneId": "way4"
+                    },
+                    {
+                        "pitch": -5,
+                        "yaw": 45,
+                        "type": "scene",
+                        "text": "ย้อนกลับ",
+                        "sceneId": "way2"
+                    }
+                ]
+            },
+        }
+    });
+    </script>
+    
+    
+    
+    
+
+
+</script>
+
+</body>
+</html>
